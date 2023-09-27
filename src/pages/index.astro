@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro'
+import CardsList from '../components/CardsList.astro'
 ---
 
 <Layout title="Extraescolares Landing Page">
@@ -19,19 +19,52 @@ import Card from '../components/Card.astro'
     <picture>
       <img class="w-full" src="https://picsum.photos/id/93/600/300" alt="" />
     </picture>
-		<section class="grid grid-cols-4 gap-3 p-3">
-			<Card id='41' title='and-and' icon='&andand;'/>
-			<Card id='42' title='porcentaje' icon='%'/>
-			<Card id='43' title='hashtag' icon='#'/>
-			<Card id='44' title='arroba' icon='@'/>
-			<Card id='45' title='ampersand' icon='&'/>
-			<Card id='46' title='igual' icon='='/>
-			<Card id='47' title='interrogación' icon='?'/>
-			<Card id='48' title='question' icon='¿'/>
-			<Card id='49' title='admiración' icon='¡'/>
-			<Card id='50' title='sorpresa' icon='!'/>
-			<Card id='52' title='euro' icon='€'/>
-			<Card id='53' title='caudata' icon='ç'/>
-		</section>
+		<CardsList />
+    <section class='py-24 text-center'>
+      <section class='py-24 text-center'>
+      <h2 class='text-4xl font-semibold uppercase'>Subscription Prices</h2>
+      <h3 class='py-3 font-light tracking-wider uppercase'>Exclusive Training Packages</h3>
+      <div class='grid grid-cols-3 gap-12 py-14 p-20'>
+        <article class='aspect-[9/14] border border-zinc-50 rounded-lg overflow-hidden shadow-xl shadow-zinc-800 flex gap-4 flex-col justify-between'>
+          <img src="https://picsum.photos/seed/1035/350/200" alt="">
+          <div class='flex flex-col gap-5 p-6'>
+            <h3 class='text-xl font-bold'>SWIMMING COACH</h3>
+            <h4 class='font-bold'>Training Center</h4>
+            <p class='text-xs'>Aenean tempor tincidunt diam ut pretium. Nulla elementum rhoncus ante.</p>
+          </div>
+          <dir class='grid grid-cols-3 m-0 p-0'>
+            <p class='flex justify-center items-center text-xs h-10 border border-zinc-50'>$ 999</p>
+            <p class='flex justify-center items-center text-xs h-10 border border-zinc-50'>&bigstar; 200 Days</p>
+            <p class='flex justify-center items-center text-xs h-10 border border-zinc-50 hover:cursor-pointer '>&rarr;</p>
+          </dir>
+        </article>
+        <article class='aspect-[9/14] border border-zinc-50 rounded-lg overflow-hidden shadow-xl shadow-zinc-800 flex gap-4 flex-col justify-between'>
+          <img src="https://picsum.photos/id/1038/350/200" alt="">
+          <div class='flex flex-col gap-5 p-6'>
+            <h3 class='text-xl font-bold'>SWIMMING COACH</h3>
+            <h4 class='font-bold'>Training Center</h4>
+            <p class='text-xs'>Aenean tempor tincidunt diam ut pretium. Nulla elementum rhoncus ante.</p>
+          </div>
+          <dir class='grid grid-cols-3 m-0 p-0'>
+            <p class='flex justify-center items-center text-xs h-10 border border-zinc-50'>$ 999</p>
+            <p class='flex justify-center items-center text-xs h-10 border border-zinc-50'>&bigstar; 200 Days</p>
+            <p class='flex justify-center items-center text-xs h-10 border border-zinc-50 hover:cursor-pointer '>&rarr;</p>
+          </dir>
+        </article>
+        <article class='aspect-[9/14] border border-zinc-50 rounded-lg overflow-hidden shadow-xl shadow-zinc-800 flex gap-4 flex-col justify-between'>
+          <img src="https://picsum.photos/id/1036/350/200" alt="">
+          <div class='flex flex-col gap-5 p-6'>
+            <h3 class='text-xl font-bold'>SWIMMING COACH</h3>
+            <h4 class='font-bold'>Training Center</h4>
+            <p class='text-xs'>Aenean tempor tincidunt diam ut pretium. Nulla elementum rhoncus ante.</p>
+          </div>
+          <dir class='grid grid-cols-3 m-0 p-0'>
+            <p class='flex justify-center items-center text-xs h-10 border border-zinc-50'>$ 999</p>
+            <p class='flex justify-center items-center text-xs h-10 border border-zinc-50'>&bigstar; 200 Days</p>
+            <p class='flex justify-center items-center text-xs h-10 border border-zinc-50 hover:cursor-pointer '>&rarr;</p>
+          </dir>
+        </article>
+      </div>
+    </section>
   </main>
 </Layout>

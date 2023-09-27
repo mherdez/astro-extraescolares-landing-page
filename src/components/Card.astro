@@ -20,13 +20,11 @@ const { id, title, icon } = Astro.props;
 		position: relative;
 		overflow: hidden;
 		border-radius: 0.25rem;
-		/* border: 4px solid rgb(228, 228, 231); */
+		border: 2px solid rgba(228, 228, 231, .2);
 		width: 100%;
-		height: 180px;
 	}
 	.image {
 		width: 100%;
-		height: 180px;
 		filter: brightness(0.3);
 	}
 	.title, .icon {
@@ -48,6 +46,7 @@ const { id, title, icon } = Astro.props;
 	}
 	.card:hover {
 		cursor: pointer;
+		border-color: transparent;
 	}
 	.card:hover .icon  {
 		transform: translate(-50%, -350%);
