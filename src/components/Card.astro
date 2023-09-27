@@ -1,61 +1,71 @@
 ---
 interface Props {
+	id: string;
 	title: string;
-	body: string;
-	href: string;
+	icon: string;
 }
 
-const { href, title, body } = Astro.props;
+const { id, title, icon } = Astro.props;
 ---
 
-<li class="link-card">
-	<a href={href}>
-		<h2>
-			{title}
-			<span>&rarr;</span>
-		</h2>
-		<p>
-			{body}
-		</p>
-	</a>
-</li>
+<div class="card">
+	<img class="image" src=`https://picsum.photos/id/${id}/200/180` alt="" />
+	<p class="title">{title}</p>
+	<p class='icon'>{icon}</p>
+	<div class='gardient'></div>
+</div>
+
 <style>
-	.link-card {
-		list-style: none;
-		display: flex;
-		padding: 1px;
-		background-color: #23262d;
-		background-image: none;
-		background-size: 400%;
-		border-radius: 7px;
-		background-position: 100%;
-		transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-		box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
-	}
-	.link-card > a {
+	.card {
+		position: relative;
+		overflow: hidden;
+		border-radius: 0.25rem;
+		/* border: 4px solid rgb(228, 228, 231); */
 		width: 100%;
-		text-decoration: none;
-		line-height: 1.4;
-		padding: calc(1.5rem - 1px);
-		border-radius: 8px;
-		color: white;
-		background-color: #23262d;
-		opacity: 0.8;
+		height: 180px;
 	}
-	h2 {
-		margin: 0;
-		font-size: 1.25rem;
-		transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+	.image {
+		width: 100%;
+		height: 180px;
+		filter: brightness(0.3);
 	}
-	p {
-		margin-top: 0.5rem;
-		margin-bottom: 0;
+	.title, .icon {
+		position: absolute;
+		font-size: 1.6rem;
+		line-height: 2.25rem;
+		letter-spacing: 0.025em;
+		font-weight: 400;
+		transition: all .4s ease-in-out;
+		transform: translate(-50%, -50%);
+		left: 50%;
 	}
-	.link-card:is(:hover, :focus-within) {
-		background-position: 0;
-		background-image: var(--accent-gradient);
+	.icon {
+		top: 40%;
+		font-size: 50px;
 	}
-	.link-card:is(:hover, :focus-within) h2 {
-		color: rgb(var(--accent-light));
+	.title {
+		top: 70%;
+	}
+	.card:hover {
+		cursor: pointer;
+	}
+	.card:hover .icon  {
+		transform: translate(-50%, -350%);
+	}
+	.card:hover .title  {
+		transform: translate(-50%, 10%);
+		z-index: 1;
+	}
+	.card:hover .image  {
+		filter: brightness(1) blur(0);
+	}
+
+	.card:hover .gardient{
+		position: absolute;
+		bottom:0%;
+		left:0%;
+		background: linear-gradient(transparent, rgba(0,0,0,1));
+		height: 75px;
+		width: 100%;
 	}
 </style>
