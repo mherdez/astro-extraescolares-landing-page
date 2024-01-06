@@ -8,12 +8,12 @@ interface Props {
 const { id, title, icon } = Astro.props;
 ---
 
-<div class="card">
+<article class="card">
 	<img class="image" src=`https://picsum.photos/id/${id}/200/180` alt="" />
 	<p class="title">{title}</p>
 	<p class='icon'>{icon}</p>
 	<div class='gardient'></div>
-</div>
+</article>
 
 <style>
 	.card {
